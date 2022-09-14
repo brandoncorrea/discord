@@ -1,5 +1,6 @@
 import os
 import discord
+import signal
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -30,3 +31,9 @@ async def on_presence_update(before, after):
         await channel.send(f'Hey there {after.nick or after.name}')
 
 client.run(TOKEN)
+
+async def exit_gracefully(self, *args):
+  await client.close()
+
+signal.signal(signal.SIGINT, exit_gracefully)
+signal.signal(signal.SIGTERM, exit_gracefully)
