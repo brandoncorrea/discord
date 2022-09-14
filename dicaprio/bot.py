@@ -23,18 +23,24 @@ def has_joined(before, after):
   return before.status == discord.Status.offline and after.status != discord.Status.offline
 
 def can_send_message(channel):
-  print(f'channel.permissions_for(channel.guild.me).send_messages: {channel.permissions_for(channel.guild.me).send_messages}')
+  print(f'messaging permission? {channel.permissions_for(channel.guild.me).send_messages}')
   return channel.permissions_for(channel.guild.me).send_messages
+
+async def greet_member(member, channel):
+  print('maybe sending a greeting!')
+  if member.name == 'ᴰᵉᵘᶜᵉˢ' and member.discriminator == '9928':
+    await channel.send(f'{member.mention} Hey Daddy')
+  elif member.display_name == 'ᴰᵉᵘᶜᵉˢ' and member.discriminator == '1066':
+    await channel.send(f'{member.mention} Hey Bwawan')
 
 @client.event
 async def on_presence_update(before, after):
   if has_joined(before, after):
-    print(f'{after.nick or after.name} has come online!')
+    print(f'{after.name} has joined!')
     for channel in after.guild.text_channels:
-      print(f'looking at channel {channel}')
+      print(f'Checking channel: {channel}')
       if can_send_message(channel):
-        print(f'sending message!')
-        await channel.send(f'Hey there {after.nick or after.name}')
+        await greet_member(after, channel)
 
 client.run(TOKEN)
 
