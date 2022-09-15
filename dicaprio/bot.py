@@ -46,7 +46,8 @@ def random_shhourti_message(member):
 def random_jules_message(member):
   messages = [
     f'{member.mention} Bang 💎',
-    f'{member.mention} Hello NOT Bwawan'
+    f'{member.mention} Hello NOT Bwawan',
+    f'{member.mention} انا احب الجميع لكنك'
   ]
   return random.choice(messages)
 
