@@ -37,11 +37,11 @@ quotes = [
 async def greet_member(member, channel):
   if member.name == 'ᴰᵉᵘᶜᵉˢ' and member.discriminator == '9928':
     await channel.send(f'{member.mention} Hey Daddy 😘')
-  elif member.display_name == 'jazfunk' and member.discriminator == '6114':
+  elif member.name == 'jazfunk' and member.discriminator == '6114':
     await channel.send(f'{member.mention} Ew what even!? 🍵')
-  elif member.display_name == 'jules' and member.discriminator == '3901':
+  elif member.name == 'jules' and member.discriminator == '3901':
     await channel.send(f'{member.mention} Bang 💎')
-  elif member.display_name == 'Hira' and member.discriminator == '2710':
+  elif member.name == 'Hira' and member.discriminator == '2710':
     await channel.send(f'{member.mention} {random.choice(quotes)}')
 
 @client.event
