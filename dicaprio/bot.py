@@ -55,11 +55,15 @@ async def greet_member(member, channel):
   elif member.name == 'A_ssmonk' and member.discriminator == '0763':
     await channel.send(f'{member.mention} Hey sexy 😉')
 
+def should_greet(member, channel):
+  r4_url = 'https://discord.com/channels/976337221663723521/1000437303870750801'
+  return r4_url == channel.jump_url and can_send_message(channel.guild.me, channel) and can_send_message(member, channel)
+
 @client.event
 async def on_presence_update(before, after):
   if has_joined(before, after):
     for channel in after.guild.text_channels:
-      if can_send_message(channel.guild.me, channel) and can_send_message(after, channel):
+      if should_greet(after, channel):
         await greet_member(after, channel)
 
 client.run(TOKEN)
