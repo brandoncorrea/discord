@@ -24,15 +24,17 @@ def has_joined(before, after):
 def can_send_message(member, channel):
   return channel.permissions_for(member).send_messages
 
-quotes = [
-  "The only respectable thing about you, old sport, is your money.",
-  "Did my heart love 'til now? Forswear its sight. For I never saw true beauty 'til this night.",
-  "Be Thankful for the noobs, for they have made you.",
-  "You had my curiosity... but now you have my attention.",
-  "Give me my sin again.",
-  "I’m having a birthday party but you’re not invited, but you can come if you want.",
-  "Is it possible to improve on perfection?"
-]
+def random_ryan_message(member):
+  messages = [
+    f"{member.mention} The only respectable thing about you, old sport, is your money.",
+    f"{member.mention} Did my heart love 'til now? Forswear its sight. For I never saw true beauty 'til this night.",
+    f"{member.mention} Be Thankful for the noobs, for they have made you.",
+    f"{member.mention} had my curiosity... but now he has my attention.",
+    f"{member.mention} Give me my sin again.",
+    f"{member.mention} I’m having a birthday party but you’re not invited, but you can come if you want.",
+    f"{member.mention} Is it possible to improve on perfection?"
+  ]
+  return random.choice(messages)
 
 def random_shhourti_message(member):
   messages = [
@@ -67,7 +69,7 @@ async def greet_member(member, channel):
   elif member.name == 'jules' and member.discriminator == '3901':
     await channel.send(random_jules_message(member))
   elif member.name == 'Hira' and member.discriminator == '2710':
-    await channel.send(f'{member.mention} {random.choice(quotes)}')
+    await channel.send(random_ryan_message(member))
   elif member.name == 'shhourti' and member.discriminator == '6292':
     await channel.send(random_shhourti_message(member))
   elif member.name == 'A_ssmonk' and member.discriminator == '0763':
