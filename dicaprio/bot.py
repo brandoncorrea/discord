@@ -50,11 +50,19 @@ def random_jules_message(member):
   ]
   return random.choice(messages)
 
+def random_matcha_message(member):
+  messages = [
+    f'{member.mention} Ew what even!? 🍵',
+    f'{member.mention} coffee is WAY better ☕',
+    f'{member.mention} so are you like, liquid pot or something?'
+  ]
+  return random.choice(messages)
+
 async def greet_member(member, channel):
   if member.name == 'ᴰᵉᵘᶜᵉˢ' and member.discriminator == '9928':
     await channel.send(f'{member.mention} Hey Daddy 😘')
   elif member.name == 'jazfunk' and member.discriminator == '6114':
-    await channel.send(f'{member.mention} Ew what even!? 🍵')
+    await channel.send(random_matcha_message(member))
   elif member.name == 'jules' and member.discriminator == '3901':
     await channel.send(random_jules_message(member))
   elif member.name == 'Hira' and member.discriminator == '2710':
