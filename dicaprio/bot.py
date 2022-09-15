@@ -52,6 +52,8 @@ async def greet_member(member, channel):
     await channel.send(f'{member.mention} Bang 💎')
   elif member.name == 'Hira' and member.discriminator == '2710':
     await channel.send(f'{member.mention} {random.choice(quotes)}')
+  elif member.name == 'shhourti' and member.discriminator == '6292':
+    await channel.send(random_shawty_message(member))
   elif member.name == 'A_ssmonk' and member.discriminator == '0763':
     await channel.send(f'{member.mention} Hey sexy 😉')
 
