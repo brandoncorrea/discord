@@ -43,8 +43,6 @@ async def greet_member(member, channel):
     await channel.send(f'{member.mention} Bang 💎')
   elif member.display_name == 'Hira' and member.discriminator == '2710':
     await channel.send(f'{member.mention} {random.choice(quotes)}')
-  elif member.display_name == 'Hira' and member.discriminator == '1066':
-    await channel.send(f'{member.mention} {random.choice(quotes)}')
 
 @client.event
 async def on_presence_update(before, after):
