@@ -1,6 +1,7 @@
 import os
 import discord
 import signal
+import random
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -23,6 +24,16 @@ def has_joined(before, after):
 def can_send_message(member, channel):
   return channel.permissions_for(member).send_messages
 
+quotes = [
+  "The only respectable thing about you, old sport, is your money.",
+  "Did my heart love 'til now? Forswear its sight. For I never saw true beauty 'til this night.",
+  "Be Thankful for the noobs, for they have made you.",
+  "You had my curiosity... but now you have my attention.",
+  "Give me my sin again.",
+  "I’m having a birthday party but you’re not invited, but you can come if you want.",
+  "Is it possible to improve on perfection?"
+]
+
 async def greet_member(member, channel):
   if member.name == 'ᴰᵉᵘᶜᵉˢ' and member.discriminator == '9928':
     await channel.send(f'{member.mention} Hey Daddy 😘')
@@ -30,6 +41,8 @@ async def greet_member(member, channel):
     await channel.send(f'{member.mention} Ew what even!? 🍵')
   elif member.display_name == 'jules' and member.discriminator == '3901':
     await channel.send(f'{member.mention} Bang 💎')
+  elif member.display_name == 'Hira' and member.discriminator == '2710':
+    await channel.send(f'{member.mention} {random.choice(quotes)}')
 
 @client.event
 async def on_presence_update(before, after):
