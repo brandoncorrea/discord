@@ -47,23 +47,35 @@ def random_shhourti_message(member):
 
 def random_jules_message(member):
   messages = [
-    f'{member.mention} Bang 💎',
-    f'{member.mention} Hello NOT Bwawan',
-    f'{member.mention} انا احب الجميع لكنك'
+    f"{member.mention} Bang 💎",
+    f"{member.mention} Hello NOT real Bwawan",
+    f"{member.mention} انا احب الجميع لكنك"
   ]
   return random.choice(messages)
 
 def random_matcha_message(member):
   messages = [
-    f'{member.mention} Ew what even!? 🍵',
-    f'{member.mention} coffee is WAY better ☕',
-    f'{member.mention} so are you like, liquid pot or something?'
+    f"{member.mention} Ew what even!? 🍵",
+    f"{member.mention} coffee is WAY better ☕",
+    f"{member.mention} so are you like, liquid pot or something?"
+  ]
+  return random.choice(messages)
+
+def random_deuces_message(member):
+  messages = [
+    f"{member.mention} Hey Daddy 😘"
+  ]
+  return random.choice(messages)
+
+def random_ssmonk_message(member):
+  messages = [
+    f'{member.mention} Hey sexy 😉'
   ]
   return random.choice(messages)
 
 async def greet_member(member, channel):
   if member.name == 'ᴰᵉᵘᶜᵉˢ' and member.discriminator == '9928':
-    await channel.send(f'{member.mention} Hey Daddy 😘')
+    await channel.send(random_deuces_message(member))
   elif member.name == 'jazfunk' and member.discriminator == '6114':
     await channel.send(random_matcha_message(member))
   elif member.name == 'jules' and member.discriminator == '3901':
@@ -73,7 +85,7 @@ async def greet_member(member, channel):
   elif member.name == 'shhourti' and member.discriminator == '6292':
     await channel.send(random_shhourti_message(member))
   elif member.name == 'A_ssmonk' and member.discriminator == '0763':
-    await channel.send(f'{member.mention} Hey sexy 😉')
+    await channel.send(random_ssmonk_message(member))
 
 def should_greet(member, channel):
   r4_url = 'https://discord.com/channels/976337221663723521/1000437303870750801'
