@@ -34,12 +34,19 @@ quotes = [
   "Is it possible to improve on perfection?"
 ]
 
-def random_shawty_message(member):
+def random_shhourti_message(member):
   messages = [
     f"{member.mention} Shhourti's like a melody in my head that I can't keep out.",
     f"{member.mention} You got them Apple Bottom jeans and boots with the fur?",
     f"Somebody call 9-1-1 {member.mention} fire burning on the dance floor!",
     f"I should be playing in the winter snow, but I’mma be under the mistletoe with {member.mention}."
+  ]
+  return random.choice(messages)
+
+def random_jules_message(member):
+  messages = [
+    f'{member.mention} Bang 💎',
+    f'{member.mention} Hello NOT Bwawan'
   ]
   return random.choice(messages)
 
@@ -49,11 +56,11 @@ async def greet_member(member, channel):
   elif member.name == 'jazfunk' and member.discriminator == '6114':
     await channel.send(f'{member.mention} Ew what even!? 🍵')
   elif member.name == 'jules' and member.discriminator == '3901':
-    await channel.send(f'{member.mention} Bang 💎')
+    await channel.send(random_jules_message(member))
   elif member.name == 'Hira' and member.discriminator == '2710':
     await channel.send(f'{member.mention} {random.choice(quotes)}')
   elif member.name == 'shhourti' and member.discriminator == '6292':
-    await channel.send(random_shawty_message(member))
+    await channel.send(random_shhourti_message(member))
   elif member.name == 'A_ssmonk' and member.discriminator == '0763':
     await channel.send(f'{member.mention} Hey sexy 😉')
 
