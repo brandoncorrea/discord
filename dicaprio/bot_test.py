@@ -1,6 +1,5 @@
 import unittest
 import asynctest
-import random
 from bot import messages_for, greet_member
 
 class Member:
