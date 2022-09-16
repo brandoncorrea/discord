@@ -51,7 +51,8 @@ def random_jules_message(member):
     f"{member.mention} Hello NOT real Bwawan",
     f"{member.mention} Oh look guys, is a noob betrayer 😒",
     f"Eject {member.mention}, she's the the imposter!",
-    f"{member.mention} انا احب الجميع لكنك"
+    f"{member.mention} انا احب الجميع لكنك",
+    f"{member.mention} You ROCK! 🪨 Hah. Get it? Cause jewels are like... nevermind."
   ]
   return random.choice(messages)
 
