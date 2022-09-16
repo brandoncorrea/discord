@@ -50,5 +50,8 @@
     "{mention} Yo yo yo yo Yoda",
     "{mention} I have waited a long time for this moment, my little green friend.",
     "{mention} I must know the truth, Master."
+  ],
+  "TestBwawan#1066": [
+    "{mention} This is a test to see if mentions are working!"
   ]
 }
