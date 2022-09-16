@@ -1,4 +1,5 @@
 import os
+import json
 import discord
 import signal
 import random
@@ -17,101 +18,21 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
   print(f'{client.user} has connected to Discord!')
-
-def make_ssmonk_messages(member):
-  return [
-    f'{member.mention} Hey sexy 😉'
-  ]
-
-def make_bub_messages(member):
-  return [
-    f'{member.mention} игнорирование'
-  ]
-
-def make_deuces_messages(member):
-  return [
-    f"{member.mention} Hey Daddy 😘",
-    f"{member.mention} Hola Papi 😍",
-  ]
-
-def make_matcha_messages(member):
-  return [
-    f"{member.mention} Ew what even!? 🍵",
-    f"{member.mention} coffee is WAY better ☕",
-    f"{member.mention} so are you like, liquid pot or something?",
-    f"{member.mention} what's the latest Tic-Tac trend these days?"
-  ]
-
-def make_jules_messages(member):
-  return [
-    f"{member.mention} Bang 💎",
-    f"{member.mention} Hello NOT real Bwawan",
-    f"{member.mention} Oh look guys, is a noob betrayer 😒",
-    f"Eject {member.mention}, she's the the imposter!",
-    f"{member.mention} انا احب الجميع لكنك",
-    f"{member.mention} You ROCK! 🪨 Hah. Get it? Cause jewels are like... nevermind."
-  ]
-
-def make_brit_messages(member):
-  return [
-    f"{member.mention} Shhourti's like a melody in my head that I can't keep out.",
-    f"{member.mention} You got them Apple Bottom jeans and boots with the fur?",
-    f"{member.mention} Somebody call 9-1-1, Shhourti fire burning on the dance floor!",
-    f"{member.mention} I should be playing in the winter snow, but I’mma be under the mistletoe with Shhourti."
-  ]
-
-def make_ryan_messages(member):
-  return [
-    f"{member.mention} The only respectable thing about you, old sport, is your money.",
-    f"{member.mention} Did my heart love 'til now? Forswear its sight. For I never saw true beauty 'til this night.",
-    f"{member.mention} Be Thankful for the noobs, for they have made you.",
-    f"{member.mention} had my curiosity... but now he has my attention.",
-    f"{member.mention} Give me my sin again.",
-    f"{member.mention} I’m having a birthday party but you’re not invited, but you can come if you want.",
-    f"{member.mention} Is it possible to improve on perfection?",
-    f"{member.mention} 'Tis an honor, Lord Ryab XVIII (the coolest one)"
-  ]
-
-def make_godfather_messages(member):
-  return [
-    f"{member.mention} Father...? 🥹"
-  ]
-
-def make_presy_messages(member):
-  return [
-    f'Greetings, {member.mention} 🖖'
-  ]
-
-def make_yoda_messages(member):
-  return [
-    f'{member.mention} Hello there',
-    f'{member.mention} Yo yo yo yo Yoda',
-    f'{member.mention} I have waited a long time for this moment, my little green friend.',
-    f'{member.mention} I must know the truth, Master.'
-  ]
+  
+# Opening JSON file
+f = open(f'{os.path.dirname(os.path.realpath(__file__))}/messages.json')
+message_formats = json.load(f)
+f.close()
 
 def messages_for(member):
-  message_fns = {
-    'A_ssmonk#0763': make_ssmonk_messages,
-    '¯\\_(ツ)_/¯#3216': make_bub_messages,
-    'ᴰᵉᵘᶜᵉˢ#9928': make_deuces_messages,
-    'jazfunk#6114': make_matcha_messages,
-    'jules#3901': make_jules_messages,
-    'shhourti#6292': make_brit_messages,
-    'Hira#2710': make_ryan_messages,
-    'Godfather_Actual#7430': make_godfather_messages,
-    'PreZzz#7543': make_presy_messages,
-    'GunProBambi#6809': make_yoda_messages
-  }
-
   id = f'{member.name}#{member.discriminator}'
-  if id in message_fns:
-    return message_fns[id](member)
+  if id in message_formats:
+    return message_formats[id]
 
 async def greet_member(member, channel):
   messages = messages_for(member)
   if messages:
-    await channel.send(random.choice(messages))
+    await channel.send(random.choice(messages).format(mention=member.mention))
 
 def has_joined(before, after):
   return before.status == discord.Status.offline and after.status != discord.Status.offline
