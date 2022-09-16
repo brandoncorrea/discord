@@ -59,7 +59,8 @@ def random_matcha_message(member):
   messages = [
     f"{member.mention} Ew what even!? 🍵",
     f"{member.mention} coffee is WAY better ☕",
-    f"{member.mention} so are you like, liquid pot or something?"
+    f"{member.mention} so are you like, liquid pot or something?",
+    f"{member.mention} what's the latest Tic-Tac trend these days?"
   ]
   return random.choice(messages)
 
