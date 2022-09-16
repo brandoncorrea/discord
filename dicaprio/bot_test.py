@@ -45,14 +45,12 @@ class TestBotMethods(unittest.TestCase):
     expected_messages = ['ssmonk Hey sexy 😉']
     self.assertEqual(messages, expected_messages)
 
-  def test_messages_for_ssmonk(self):
-    messages = messages_for(ssmonk)
-    expected_messages = ['ssmonk Hey sexy 😉']
-    self.assertEqual(messages, expected_messages)
-
   def test_messages_for_deuces(self):
     messages = messages_for(deuces)
-    expected_messages = ['Papi Hey Daddy 😘']
+    expected_messages = [
+      'Papi Hey Daddy 😘', 
+      'Papi Hola Papi 😍'
+    ]
     self.assertEqual(messages, expected_messages)
 
   def test_messages_for_matcha(self):

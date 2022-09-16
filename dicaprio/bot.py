@@ -18,29 +18,6 @@ client = discord.Client(intents=intents)
 async def on_ready():
   print(f'{client.user} has connected to Discord!')
 
-def random_deuces_message(member):
-  messages = [
-    f"{member.mention} Hey Daddy 😘"
-  ]
-  return random.choice(messages)
-
-def random_ssmonk_message(member):
-  messages = [
-    f'{member.mention} Hey sexy 😉'
-  ]
-  return random.choice(messages)
-
-def random_bub_message():
-  messages = [
-    f'{member.mention} игнорирование'
-  ]
-  return random.choice(messages)
-
-def make_bub_messages(member):
-  return [
-    f'{member.mention} игнорирование'
-  ]
-
 def make_ssmonk_messages(member):
   return [
     f'{member.mention} Hey sexy 😉'
@@ -53,7 +30,8 @@ def make_bub_messages(member):
 
 def make_deuces_messages(member):
   return [
-    f"{member.mention} Hey Daddy 😘"
+    f"{member.mention} Hey Daddy 😘",
+    f"{member.mention} Hola Papi 😍",
   ]
 
 def make_matcha_messages(member):
