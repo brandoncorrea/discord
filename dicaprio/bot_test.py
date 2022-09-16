@@ -26,6 +26,7 @@ jules = Member('jules', '3901', 'Kok')
 brit = Member('shhourti', '6292', 'Brit')
 ryan = Member('Hira', '2710', 'Ryan')
 godfather = Member('Godfather_Actual', '7430', 'Godfather')
+presy = Member('PreZzz', '7543', 'Presy')
 
 class TestBotMethods(unittest.TestCase):
 
@@ -103,6 +104,13 @@ class TestBotMethods(unittest.TestCase):
     messages = messages_for(godfather)
     expected_messages = [
       'Godfather Father...? 🥹'
+    ]
+    self.assertEqual(messages, expected_messages)
+
+  def test_messages_for_presy(self):
+    messages = messages_for(presy)
+    expected_messages = [
+      'Greetings, Presy 🖖'
     ]
     self.assertEqual(messages, expected_messages)
 

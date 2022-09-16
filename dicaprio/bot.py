@@ -99,6 +99,11 @@ def make_godfather_messages(member):
     f"{member.mention} Father...? 🥹"
   ]
 
+def make_presy_messages(member):
+  return [
+    f'Greetings, {member.mention} 🖖'
+  ]
+
 def messages_for(member):
   message_fns = {
     'A_ssmonk#0763': make_ssmonk_messages,
@@ -108,7 +113,8 @@ def messages_for(member):
     'jules#3901': make_jules_messages,
     'shhourti#6292': make_brit_messages,
     'Hira#2710': make_ryan_messages,
-    'Godfather_Actual#7430': make_godfather_messages
+    'Godfather_Actual#7430': make_godfather_messages,
+    'PreZzz#7543': make_presy_messages
   }
 
   id = f'{member.name}#{member.discriminator}'
