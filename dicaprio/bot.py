@@ -32,7 +32,8 @@ def random_ryan_message(member):
     f"{member.mention} had my curiosity... but now he has my attention.",
     f"{member.mention} Give me my sin again.",
     f"{member.mention} I’m having a birthday party but you’re not invited, but you can come if you want.",
-    f"{member.mention} Is it possible to improve on perfection?"
+    f"{member.mention} Is it possible to improve on perfection?",
+    f"{member.mention} 'Tis an honor, Lord Ryab XVIII (the coolest one)"
   ]
   return random.choice(messages)
 
@@ -74,6 +75,12 @@ def random_deuces_message(member):
 def random_ssmonk_message(member):
   messages = [
     f'{member.mention} Hey sexy 😉'
+  ]
+  return random.choice(messages)
+
+def random_bub_message():
+  messages = [
+    f'{member.mention} игнорирование'
   ]
   return random.choice(messages)
 
