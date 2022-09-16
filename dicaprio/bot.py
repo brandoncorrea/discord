@@ -49,7 +49,7 @@ def random_jules_message(member):
   messages = [
     f"{member.mention} Bang 💎",
     f"{member.mention} Hello NOT real Bwawan",
-    f"{member.mention} Oh look guys, is the noob traitor",
+    f"{member.mention} Oh look guys, is a noob betrayer 😒",
     f"Eject {member.mention}, she's the the imposter!",
     f"{member.mention} انا احب الجميع لكنك"
   ]
