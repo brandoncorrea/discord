@@ -27,6 +27,7 @@ brit = Member('shhourti', '6292', 'Brit')
 ryan = Member('Hira', '2710', 'Ryan')
 godfather = Member('Godfather_Actual', '7430', 'Godfather')
 presy = Member('PreZzz', '7543', 'Presy')
+yoda = Member('GunProBambi', '6809', 'Yoda')
 
 class TestBotMethods(unittest.TestCase):
 
@@ -111,6 +112,16 @@ class TestBotMethods(unittest.TestCase):
     messages = messages_for(presy)
     expected_messages = [
       'Greetings, Presy 🖖'
+    ]
+    self.assertEqual(messages, expected_messages)
+
+  def test_messages_for_yoda(self):
+    messages = messages_for(yoda)
+    expected_messages = [
+      'Yoda Hello there',
+      'Yoda Yo yo yo yo Yoda',
+      'Yoda I have waited a long time for this moment, my little green friend.',
+      "Yoda I must know the truth, Master."
     ]
     self.assertEqual(messages, expected_messages)
 

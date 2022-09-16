@@ -104,6 +104,14 @@ def make_presy_messages(member):
     f'Greetings, {member.mention} 🖖'
   ]
 
+def make_yoda_messages(member):
+  return [
+    f'{member.mention} Hello there',
+    f'{member.mention} Yo yo yo yo Yoda',
+    f'{member.mention} I have waited a long time for this moment, my little green friend.',
+    f'{member.mention} I must know the truth, Master.'
+  ]
+
 def messages_for(member):
   message_fns = {
     'A_ssmonk#0763': make_ssmonk_messages,
@@ -114,7 +122,8 @@ def messages_for(member):
     'shhourti#6292': make_brit_messages,
     'Hira#2710': make_ryan_messages,
     'Godfather_Actual#7430': make_godfather_messages,
-    'PreZzz#7543': make_presy_messages
+    'PreZzz#7543': make_presy_messages,
+    'GunProBambi#6809': make_yoda_messages
   }
 
   id = f'{member.name}#{member.discriminator}'
