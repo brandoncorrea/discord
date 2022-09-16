@@ -40,8 +40,8 @@ def random_shhourti_message(member):
   messages = [
     f"{member.mention} Shhourti's like a melody in my head that I can't keep out.",
     f"{member.mention} You got them Apple Bottom jeans and boots with the fur?",
-    f"Somebody call 9-1-1 {member.mention} fire burning on the dance floor!",
-    f"I should be playing in the winter snow, but I’mma be under the mistletoe with {member.mention}."
+    f"{member.mention} Somebody call 9-1-1, Shhourti fire burning on the dance floor!",
+    f"{member.mention} I should be playing in the winter snow, but I’mma be under the mistletoe with Shhourti."
   ]
   return random.choice(messages)
 
