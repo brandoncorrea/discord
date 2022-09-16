@@ -25,7 +25,7 @@ matcha = Member('jazfunk', '6114', 'matcha')
 jules = Member('jules', '3901', 'Kok')
 brit = Member('shhourti', '6292', 'Brit')
 ryan = Member('Hira', '2710', 'Ryan')
-
+godfather = Member('Godfather_Actual', '7430', 'Godfather')
 
 class TestBotMethods(unittest.TestCase):
 
@@ -96,6 +96,13 @@ class TestBotMethods(unittest.TestCase):
       "Ryan I’m having a birthday party but you’re not invited, but you can come if you want.",
       "Ryan Is it possible to improve on perfection?",
       "Ryan 'Tis an honor, Lord Ryab XVIII (the coolest one)"
+    ]
+    self.assertEqual(messages, expected_messages)
+
+  def test_messages_for_godfather(self):
+    messages = messages_for(godfather)
+    expected_messages = [
+      'Godfather Father...? 🥹'
     ]
     self.assertEqual(messages, expected_messages)
 

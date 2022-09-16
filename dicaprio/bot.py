@@ -94,6 +94,11 @@ def make_ryan_messages(member):
     f"{member.mention} 'Tis an honor, Lord Ryab XVIII (the coolest one)"
   ]
 
+def make_godfather_messages(member):
+  return [
+    f"{member.mention} Father...? 🥹"
+  ]
+
 def messages_for(member):
   message_fns = {
     'A_ssmonk#0763': make_ssmonk_messages,
@@ -102,7 +107,8 @@ def messages_for(member):
     'jazfunk#6114': make_matcha_messages,
     'jules#3901': make_jules_messages,
     'shhourti#6292': make_brit_messages,
-    'Hira#2710': make_ryan_messages
+    'Hira#2710': make_ryan_messages,
+    'Godfather_Actual#7430': make_godfather_messages
   }
 
   id = f'{member.name}#{member.discriminator}'
